@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collection manager</title>
+    <link rel="stylesheet" href="style.css"/>
+    
+    
+</head>
+<body>
+    <div id="main">
+        <h1>Collection manager</h1>
+        <!--
+            introduction
+        -->
+        <p id="introduction">
+            Welcome in Collection manager! This page lets you adding, deleting words from collection, counting the number of selected words in collection and well as selecting distinct words from collection.
+            Everything is done via REST API and Fetch.
+        </p>
+        <!--
+            controls menu which controls API. Each control has description, an input which collects the user's input and button, which executes script
+        -->
+        <div id="controls">
+            <div class="add control">
+                <label for="add">Add word to collection</label><input type="text" id="add">
+                <!--
+                    each button has a custom data-inp attribute, which is the same as input to which the button refers to. It's used by script to get information
+                    about which input it has to collect data from
+                -->
+                <button id="add_submit" class="fetch" data-inp="add">Submit</button>
+            </div>
+            <div class="del control">
+                <label for="del">Delete word from collection</label><input type="text" id="del">
+                <button id="del_submit" class="fetch" data-inp="del">Submit</button>
+            </div>
+            <div class="count control">
+                <label for="count">Count word appearances in collection</label><input type="text" id="count">
+                <button id="count_submit" class="fetch" data-inp="count">Submit</button>
+            </div>
+            <div class="distinct control">
+                <label for="distinct">Get unique words from collection</label>
+                <button id="distinct_submit" class="fetch" data-inp="distinct">Submit</button>
+            </div>
+        </div>
+        <!--
+            Here are the results returned by API
+        -->
+        <div id="results">
+            result
+        </div>
+    </div>
+    <!--
+            declaration of script, so it doesn't execute before body is loaded
+    -->
+    <script src="script.js"></script>
+</body>
+</html>
